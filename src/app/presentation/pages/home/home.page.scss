@@ -25,3 +25,23 @@
 #container a {
   text-decoration: none;
 }
+
+.title{
+  text-align: center;
+}
+
+.btn{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+.contentLoader {
+  position: absolute;
+  top: 45%;
+  left: 48%;
+  ion-spinner {
+    color: #127b9c;
+  }
+}

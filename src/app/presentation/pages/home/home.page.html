@@ -1,0 +1,47 @@
+
+<ion-content [fullscreen]="true" *ngIf="showAll">
+  <div *ngIf="registerFlag">
+    <h1 class="title" text-center>Register</h1>
+    <ion-item>
+      <ion-label position="floating">Email:</ion-label>
+      <ion-input inputmode="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password:</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-button class="btn" (click)="register()" expand="block" fill="solid" shape="round">
+      REGISTER
+    </ion-button>
+    <ion-button class="btn" (click)="returnToLogin()" expand="block" fill="solid" shape="round">
+      GO TO LOGIN
+    </ion-button>
+  </div>
+  <div *ngIf="loginFlag">
+    <h1 class="title" text-center>Login</h1>
+    <ion-item>
+      <ion-label position="floating">Email:</ion-label>
+      <ion-input inputmode="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password:</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-button class="btn" (click)="login()" expand="block" fill="solid" shape="round">
+      LOGIN
+    </ion-button>
+    <ion-button class="btn" (click)="returnToRegister()" expand="block" fill="solid" shape="round">
+      GO TO REGISTER
+    </ion-button>
+  </div>
+  <div *ngIf="logueado">
+    <h1 class="title" text-center>Usuario</h1>
+    <div *ngIf="user" style="padding: 2rem;">{{user}}</div>
+    <ion-button class="btn" (click)="returnToLogin()" expand="block" fill="solid" shape="round">
+      BACK
+    </ion-button>
+  </div>
+</ion-content>
+<div class="contentLoader" *ngIf="!showAll">
+  <ion-spinner name="crescent"></ion-spinner>
+</div>
